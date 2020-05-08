@@ -53,6 +53,7 @@ body {
 .button:hover {
     background: white;
     color: gray;
+    border: 2px solid gray;
 }
 
 #input {
