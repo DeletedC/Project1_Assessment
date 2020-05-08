@@ -21,8 +21,17 @@ const addNumbers = () => {
     console.log(inputAsNumber);    
 }
 
+const subtractNumbers = () => {
+    const resultAsNumber = parseInt($result.text(), 10);
+    const inputAsNumber = parseInt($input, 10);
+    $result.text(resultAsNumber - inputAsNumber);
+    console.log(resultAsNumber);
+    console.log(inputAsNumber);    
+}
+
 ////////////////////////////
 // Event Listeners
 ////////////////////////////
 
 $btnPlus.on('click', addNumbers);
+$btnMinus.on('click', subtractNumbers);
