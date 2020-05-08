@@ -7,21 +7,29 @@ console.log("main.js CONNECTED");
 let $result = $('#result');
 const $btnPlus = $('#btnPlus');
 const $btnMinus = $('#btnMinus');
-let $input = $('input').val();
+const $input = $('input');
+let $inputVal = $('input').val();
 
 /////////////////////
 // Functions
 /////////////////////
 
+const setInputVal = () => {
+    $inputVal = $('input').val();
+    console.log($inputVal);
+}
+
 const addNumbers = () => {
+    setInputVal();
     const resultAsNumber = parseInt($result.text(), 10);
-    const inputAsNumber = parseInt($input, 10);
+    const inputAsNumber = parseInt($inputVal, 10);
     $result.text(resultAsNumber + inputAsNumber);  
 }
 
 const subtractNumbers = () => {
+    setInputVal();
     const resultAsNumber = parseInt($result.text(), 10);
-    const inputAsNumber = parseInt($input, 10);
+    const inputAsNumber = parseInt($inputVal, 10);
     $result.text(resultAsNumber - inputAsNumber);   
 }
 
@@ -31,3 +39,4 @@ const subtractNumbers = () => {
 
 $btnPlus.on('click', addNumbers);
 $btnMinus.on('click', subtractNumbers);
+$input.on('click', setInputVal);
