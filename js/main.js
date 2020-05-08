@@ -4,12 +4,25 @@ console.log("main.js CONNECTED");
 // Variables
 ///////////////////////
 
-const $result = $('#result');
+let $result = $('#result');
 const $btnPlus = $('#btnPlus');
 const $btnMinus = $('#btnMinus');
-const $input = $('input');
+let $input = $('input').val();
 
+/////////////////////
+// Functions
+/////////////////////
 
-$(() => {
-    
-})
+const addNumbers = () => {
+    const resultAsNumber = parseInt($result.text(), 10);
+    const inputAsNumber = parseInt($input, 10);
+    $result.text(resultAsNumber + inputAsNumber);
+    console.log(resultAsNumber);
+    console.log(inputAsNumber);    
+}
+
+////////////////////////////
+// Event Listeners
+////////////////////////////
+
+$btnPlus.on('click', addNumbers);
